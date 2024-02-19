@@ -41,7 +41,11 @@
             Grid.ColumnSpan="2" Margin="10">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
-                    <TextBlock Text="{Binding FullName}" />
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding FirstName}" />
+                        <TextBlock Text=" " />
+                        <TextBlock Text="{Binding LastName}" />
+                    </StackPanel>
                 </DataTemplate>
             </ComboBox.ItemTemplate>
         </ComboBox>
@@ -54,13 +58,14 @@
 
 
         <!--<Image Grid.Row="1" Grid.Column="4" Grid.RowSpan="6" Source="C:\Learn\Kurzus_Repo\WPFPracticeUni\WpfDemo\pixelart.jpg" /> -->
-
-        <WrapPanel Grid.Row="1" Grid.Column="4" Grid.RowSpan="6" Orientation="Horizontal">
-            <Image MaxWidth="150" Source="C:\Learn\Kurzus_Repo\WPFPracticeUni\WpfDemo\pixelart2.png" />  
-            <Image MaxWidth="150" Source="C:\Learn\Kurzus_Repo\WPFPracticeUni\WpfDemo\pixelart3.png" />  
-            <Image MaxWidth="150" Source="C:\Learn\Kurzus_Repo\WPFPracticeUni\WpfDemo\pixelart4.png" />  
-            <Image MaxWidth="150" Source="C:\Learn\Kurzus_Repo\WPFPracticeUni\WpfDemo\pixelart5.png" />  
-        </WrapPanel>
+        <ScrollViewer Grid.Row="1" Grid.Column="4" Grid.RowSpan="6">
+            <StackPanel Orientation="Vertical">
+                <Image MaxWidth="150" Source="C:\Learn\Kurzus_Repo\WPFPracticeUni\WpfDemo\pixelart2.png" />  
+                <Image MaxWidth="150" Source="C:\Learn\Kurzus_Repo\WPFPracticeUni\WpfDemo\pixelart3.png" />  
+                <Image MaxWidth="150" Source="C:\Learn\Kurzus_Repo\WPFPracticeUni\WpfDemo\pixelart4.png" />  
+                <Image MaxWidth="150" Source="C:\Learn\Kurzus_Repo\WPFPracticeUni\WpfDemo\pixelart5.png" />  
+            </StackPanel>
+        </ScrollViewer>
 
     </Grid>
 </Window>
