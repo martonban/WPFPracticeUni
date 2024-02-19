@@ -55,12 +55,12 @@
 
         <!--<Image Grid.Row="1" Grid.Column="4" Grid.RowSpan="6" Source="C:\Learn\Kurzus_Repo\WPFPracticeUni\WpfDemo\pixelart.jpg" /> -->
 
-        <StackPanel Grid.Row="1" Grid.Column="4" Grid.RowSpan="6" Orientation="Horizontal">
+        <WrapPanel Grid.Row="1" Grid.Column="4" Grid.RowSpan="6" Orientation="Horizontal">
             <Image MaxWidth="150" Source="C:\Learn\Kurzus_Repo\WPFPracticeUni\WpfDemo\pixelart2.png" />  
             <Image MaxWidth="150" Source="C:\Learn\Kurzus_Repo\WPFPracticeUni\WpfDemo\pixelart3.png" />  
             <Image MaxWidth="150" Source="C:\Learn\Kurzus_Repo\WPFPracticeUni\WpfDemo\pixelart4.png" />  
             <Image MaxWidth="150" Source="C:\Learn\Kurzus_Repo\WPFPracticeUni\WpfDemo\pixelart5.png" />  
-        </StackPanel>
+        </WrapPanel>
 
     </Grid>
 </Window>
