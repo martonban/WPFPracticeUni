@@ -4,12 +4,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WPFwithMVVMDemo.Models;
 
 namespace WPFwithMVVMDemo.ViewModels {
-    public class ShellViewModel : Screen {
+	public class ShellViewModel : Screen {
 
 		private string _firstName = "Tim";
-        private string _lastName;
+		private string _lastName;
+        private BindableCollection<PersonModel> _people = new BindableCollection<PersonModel>();
+        private PersonModel _selectedPerson;
+
+        public ShellViewModel(){
+			People.Add(new PersonModel { FirstName = "Tim", LastName = "Corey" });
+			People.Add(new PersonModel { FirstName = "Bill", LastName = "Jhones" });
+			People.Add(new PersonModel { FirstName = "Sue", LastName = "Storm" });
+        }
 
         public string FirstName {
 			get { return _firstName; }
@@ -17,22 +26,34 @@ namespace WPFwithMVVMDemo.ViewModels {
 				_firstName = value;
 				// If there is any changes like a TextBlock has been changed the data will be rewritten
 				NotifyOfPropertyChange(() => FirstName);
-                NotifyOfPropertyChange(() => FullName);
-            }
+				NotifyOfPropertyChange(() => FullName);
+			}
 		}
 
 		public string LastName {
 			get { return _lastName; }
-			set { 
+			set {
 				_lastName = value;
-                NotifyOfPropertyChange(() => LastName);
-                NotifyOfPropertyChange(() => FullName);
-            }
+				NotifyOfPropertyChange(() => LastName);
+				NotifyOfPropertyChange(() => FullName);
+			}
 		}
 
 		public string FullName {
 			get { return $"{FirstName} {LastName}"; }
 		}
 
+		public BindableCollection<PersonModel> People {
+			get { return _people; }
+			set { _people = value; }
+		}
+
+		public PersonModel SelectedPesron {
+			get { return _selectedPerson; }
+			set { 
+				_selectedPerson = value;
+                NotifyOfPropertyChange(() => SelectedPesron);
+            }
+		}
 	}
 }
