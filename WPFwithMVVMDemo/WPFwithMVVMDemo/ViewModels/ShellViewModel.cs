@@ -1,13 +1,9 @@
 ﻿using Caliburn.Micro;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using WPFwithMVVMDemo.Models;
 
 namespace WPFwithMVVMDemo.ViewModels {
-	public class ShellViewModel : Screen {
+	public class ShellViewModel : Conductor<object> {
 
 		private string _firstName;
 		private string _lastName;
@@ -63,6 +59,14 @@ namespace WPFwithMVVMDemo.ViewModels {
 
 		public bool CanClearText(string firstName, string lastName) { 
 			return !String.IsNullOrWhiteSpace(firstName) || !String.IsNullOrWhiteSpace(lastName);
+		}
+
+		public void LoadPageOne() {
+            ActivateItemAsync(new FirstChildViewModel());
+		}
+
+		public void LoadPageTwo() {
+			ActivateItemAsync(new SecondChildViewModel());
 		}
 
     }
