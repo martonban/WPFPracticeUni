@@ -37,5 +37,7 @@
                   DisplayMemberPath="FirstName" />
         <TextBlock Grid.Row="3" Grid.Column="2" x:Name="SelectedPerson_LastName"></TextBlock>
 
+        <Button x:Name="ClearText" Grid.Row ="4" Grid.Column="1" >Clear Text</Button>
+
     </Grid>
 </Window>

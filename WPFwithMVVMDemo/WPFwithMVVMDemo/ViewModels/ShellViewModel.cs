@@ -55,5 +55,10 @@ namespace WPFwithMVVMDemo.ViewModels {
                 NotifyOfPropertyChange(() => SelectedPerson);
             }
 		}
+
+		public void ClearText() {
+			FirstName = "";
+			LastName = "";
+		}
 	}
 }
