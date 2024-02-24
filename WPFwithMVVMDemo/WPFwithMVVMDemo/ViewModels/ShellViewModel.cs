@@ -9,7 +9,7 @@ using WPFwithMVVMDemo.Models;
 namespace WPFwithMVVMDemo.ViewModels {
 	public class ShellViewModel : Screen {
 
-		private string _firstName = "Tim";
+		private string _firstName;
 		private string _lastName;
         private BindableCollection<PersonModel> _people = new BindableCollection<PersonModel>();
         private PersonModel _selectedPerson;
@@ -48,11 +48,11 @@ namespace WPFwithMVVMDemo.ViewModels {
 			set { _people = value; }
 		}
 
-		public PersonModel SelectedPesron {
+		public PersonModel SelectedPerson {
 			get { return _selectedPerson; }
 			set { 
 				_selectedPerson = value;
-                NotifyOfPropertyChange(() => SelectedPesron);
+                NotifyOfPropertyChange(() => SelectedPerson);
             }
 		}
 	}

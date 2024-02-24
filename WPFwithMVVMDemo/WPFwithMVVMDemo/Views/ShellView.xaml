@@ -32,8 +32,10 @@
         <TextBox x:Name="FirstName" Grid.Row="2" Grid.Column="1" MinWidth="100" />
         <TextBox x:Name="LastName" Grid.Row="2" Grid.Column="2" MinWidth="100" />
 
-        <ComboBox Grid.Row="3" Grid.Column="1" x:Name="People" SelectedItem="{Binding Path=SelectedPerson, 
-            Mode=OneWayToSource}" DisplayMemberPath="FirstName" />
+        <ComboBox Grid.Row="3" Grid.Column="1" x:Name="People" 
+                  SelectedItem="{Binding Path=SelectedPerson, Mode=OneWayToSource}" 
+                  DisplayMemberPath="FirstName" />
+        <TextBlock Grid.Row="3" Grid.Column="2" x:Name="SelectedPerson_LastName"></TextBlock>
 
     </Grid>
 </Window>
