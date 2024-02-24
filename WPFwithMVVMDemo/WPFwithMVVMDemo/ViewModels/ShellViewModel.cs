@@ -56,9 +56,14 @@ namespace WPFwithMVVMDemo.ViewModels {
             }
 		}
 
-		public void ClearText() {
+		public void ClearText(string firstName, string lastName) {
 			FirstName = "";
 			LastName = "";
 		}
-	}
+
+		public bool CanClearText(string firstName, string lastName) { 
+			return !String.IsNullOrWhiteSpace(firstName) || !String.IsNullOrWhiteSpace(lastName);
+		}
+
+    }
 }
